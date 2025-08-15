@@ -1,0 +1,26 @@
+.note {
+    flex: 1 1 calc(33.333% - 16px);
+    box-sizing: border-box;
+
+    font-family: 'Courier New';
+    background-color: #cac7c7;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px 0;
+    max-width: 250px;
+    position: relative;
+    padding: 20px;
+}
+
+.note h3 {
+    margin: 0 0 5px;
+    font-size: 1.2em;
+    color: #333333;
+}
+
+.note p {
+    margin: 0 0 10px;
+    font-size: 1em;
+    color: #555555;
+}
