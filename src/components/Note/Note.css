@@ -13,14 +13,29 @@
     padding: 20px;
 }
 
-.note h3 {
+.note main h3 {
     margin: 0 0 5px;
     font-size: 1.2em;
     color: #333333;
 }
 
-.note p {
+.note main p {
     margin: 0 0 10px;
     font-size: 1em;
     color: #555555;
+}
+
+.note main {
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.note footer {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }

@@ -2,6 +2,7 @@ import Button from "../Button/Button";
 import Input from "./Input/Input";
 import Textarea from "./Textarea/Textarea";
 import type { noteType } from "../../types/noteType";
+import "./Form.css"
 
 type FormFieldProps = {
     id: string;
@@ -11,16 +12,16 @@ type FormFieldProps = {
     type: "text" | "textarea";
 }
 type FormProps = {
-    handleSaveForm: (event: React.FormEvent<HTMLFormElement>) => void;
-    handleCancelForm: () => void;
+    handleSubmitForm: (event: React.FormEvent<HTMLFormElement>) => void;
+    handleCancelForm?: () => void;
+    principalText?: string;
     fields: FormFieldProps[];
     data: noteType | null;
 }
 
-export default function Form({ handleSaveForm, handleCancelForm, fields, data }: FormProps) {
-    console.log(data)
+export default function Form({ handleSubmitForm, handleCancelForm, principalText, fields, data }: FormProps) {
     return (
-        <form onSubmit={(e) => { handleSaveForm(e) }}>
+        <form className="form" onSubmit={(e) => { handleSubmitForm(e) }}>
             {
                 fields.map(field => {
                     const value = data ? data[field.name] : "";
@@ -52,8 +53,11 @@ export default function Form({ handleSaveForm, handleCancelForm, fields, data }:
                     )
                 })
             }
-            <Button title="Save" type="submit"></Button>
-            <Button title="Cancel" onClick={handleCancelForm}></Button>
+            <footer>
+                <Button title={principalText ? principalText : "Save"} type="submit"></Button>
+                {handleCancelForm && <Button title="Cancel" onClick={handleCancelForm}></Button>}
+
+            </footer>
         </form>
     )
 }

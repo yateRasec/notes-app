@@ -12,10 +12,17 @@ export default function Note({ id, title, description, onClickEdit, onClickDelet
 
     return (
         <div className="note">
-            <Button className="close-button" onClick={() => onClickDelete(id)}>×</Button>
-            <h3>{title}</h3>
-            <p>{description}</p>
-            <Button title="Edit" onClick={() => onClickEdit(id)}></Button>
+            <div>
+                <Button className="close-button" onClick={() => onClickDelete(id)}>×</Button>
+            </div>
+            <main className="main-note">
+
+                <h3>{title}</h3>
+                <p>{description}</p>
+                <footer>
+                    <Button title="Edit" onClick={() => onClickEdit(id)}></Button>
+                </footer>
+            </main>
         </div>
     )
 }

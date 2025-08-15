@@ -1,0 +1,13 @@
+.form div input {
+    width: 92%;
+}
+
+.form footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.form footer button {
+    width: 100%;
+}
